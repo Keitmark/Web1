@@ -1,0 +1,147 @@
+:root{
+  --accent:#2b7a78;
+  --accent-dark:#1f5b59;
+  --bg:#f6f8f9;
+  --card:#ffffff;
+  --text:#1b1b1b;
+  --muted:#6b6b6b;
+  --max-width:1100px;
+  --radius:10px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+}
+.container{
+  max-width:var(--max-width);
+  margin:24px auto;
+  padding:0 18px;
+}
+
+/* header / nav */
+.header{
+  background:linear-gradient(90deg, rgba(43,122,120,0.95), rgba(31,91,89,0.95));
+  color:white;
+  padding:18px 0;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:white;
+}
+.brand img{height:48px;width:48px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,255,255,0.12)}
+.brand h1{font-size:18px;margin:0}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+nav a{
+  color:white;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;opacity:0.95
+}
+nav a:hover{background:rgba(255,255,255,0.08)}
+
+/* hero */
+.hero{
+  background:linear-gradient(180deg, rgba(0,0,0,0.12), transparent);
+  padding:28px 0;
+  margin-bottom:18px;
+  color:var(--text);
+}
+.hero .card{
+  background:var(--card);
+  padding:18px;border-radius:var(--radius);
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+}
+
+/* cards */
+.card{
+  background:var(--card);
+  padding:16px;border-radius:10px;
+  box-shadow:0 4px 12px rgba(16,24,40,0.04);
+}
+
+/* responsive grid */
+.grid{
+  display:grid;
+  gap:16px;
+}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.grid.cols-1{grid-template-columns:1fr}
+@media (max-width:900px){ .grid.cols-3{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:600px){ .grid.cols-3, .grid.cols-2{grid-template-columns:1fr} }
+
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:8px;
+}
+.gallery img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+
+/* news list */
+.news-item{display:flex;gap:12px;align-items:flex-start}
+.news-item img{width:110px;height:70px;object-fit:cover;border-radius:6px}
+
+/* skills bars (horizontal) */
+.skill{
+  margin-bottom:10px;
+}
+.skill .label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.skill .bar{
+  background:#eee;border-radius:999px;height:14px;overflow:hidden
+}
+.skill .bar > span{
+  display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-dark));
+  text-indent:10px;font-size:12px;color:white;line-height:14px
+}
+
+/* table */
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+.table th{background:#fafafa;font-weight:700}
+
+/* form */
+.form-row{display:flex;gap:12px}
+.form-row .col{flex:1}
+input,textarea,select{
+  width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;background:white
+}
+button.btn{
+  background:var(--accent);color:white;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer
+}
+button.btn:active{transform:translateY(1px)}
+
+/* footer */
+.footer{padding:18px 0;text-align:center;color:var(--muted);font-size:14px;margin-top:24px}
+
+/* small helpers */
+.meta{color:var(--muted);font-size:13px}
+.card-title{font-size:18px;margin:0 0 8px 0}
+
+/* timeline styles (history) */
+.timeline-table .year{width:110px;font-weight:700;color:var(--accent-dark)}
+@media (max-width:700px){
+  .table thead{display:none}
+  .table tr{display:block;margin-bottom:12px;background:white;padding:12px;border-radius:8px}
+  .table td{display:block;border-bottom:0;padding:6px}
+}
+
+/* small-screen nav collapse simple */
+@media (max-width:740px){
+  nav ul{display:none}
+  .mobile-nav{display:block}
+}
+/* accessibility focus */
+a:focus, button:focus, input:focus, textarea:focus{outline:3px solid rgba(43,122,120,0.18);outline-offset:2px}

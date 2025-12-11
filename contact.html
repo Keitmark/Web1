@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Контакты</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Логотип">
+        <div><h1>Мариуполь</h1><div class="meta">Обратная связь</div></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="history.html">История</a></li>
+          <li><a href="infrastructure.html">Инфраструктура</a></li>
+          <li><a href="culture.html">Культура</a></li>
+          <li><a href="contact.html">Обратная связь</a></li>
+          <li><a href="about.html">О разработчике</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Свяжитесь с нами</h2>
+      
+
+      <!-- Пример отправки на самопротоколируемый адрес: action="#" — для учебной версии -->
+      <form action="#" method="post" novalidate onsubmit="alert('Форма отправлена (демо).'); return false;">
+        <div class="form-row" style="margin-bottom:12px">
+          <div class="col">
+            <label for="name">Имя</label>
+            <input id="name" name="name" type="text" required minlength="2" placeholder="Ваше имя">
+          </div>
+          <div class="col">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="example@mail.com">
+          </div>
+        </div>
+
+        <div style="margin-bottom:12px">
+          <label for="subject">Тема</label>
+          <input id="subject" name="subject" type="text" required placeholder="Короткая тема сообщения">
+        </div>
+
+        <div style="margin-bottom:12px">
+          <label for="message">Сообщение</label>
+          <textarea id="message" name="message" rows="6" required minlength="10" placeholder="Текст сообщения"></textarea>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center">
+          <button type="submit" class="btn">Отправить</button>
+          <div class="meta">Поля обязательны к заполнению.</div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 — Контакты</footer>
+</body>
+</html>
